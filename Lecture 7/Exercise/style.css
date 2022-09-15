@@ -1,0 +1,35 @@
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, .center {
+    text-align: center;
+}
+
+.no-borders td {
+    border: 1px solid white;
+    text-align: left;
+}
+
+ul, .myBoldClass {
+    font-weight: bold;
+}
+
+/* ul li ul {
+    font-weight: normal;
+} */
+
+.normal {
+    font-weight: normal;
+}
+

@@ -1,23 +1,38 @@
 #box {
     padding: 50px;
+    border: 3px dashed black;
+    margin-right: 20px;
+    margin-top: 50px;
 }
 
 
 
-h1 {
+/* h1 {
     color: rgba(41, 173, 138, 0.8);
-} 
+}  */
+
+p {
+    text-align: center;
+    color: red;
+}
 
 /* div {
     color: green;
     font-size: 25px;
 } */
 
-/* .green, #greenh2 {
+ .green {
     color: green;
     font-size: 25px;
 }
 
+#myImg {
+    height: 400px;
+    width: 400px;
+    padding: 40px;
+    margin: 40px;
+    border: 20px solid black;
+}
 
 
 
