@@ -9,6 +9,8 @@
     <h1>This is an html page</h1>
     <h1 id="second">This is h1 number 2</h1>
     <h1>This is header 3</h1>
+
+    <button style="background-color: red;" onclick="changeColor(this)" id="button">This is a button</button>
     
     <p>This is a paragraph</p>
     <p class="para">This is another paragraph</p>
@@ -16,7 +18,14 @@
 
     <a href="http://www.google.com">Google</a>
 
-    <p>This is a para</p>
+    <select id="cars" onchange="onChange(this)">
+        <option value="1">Select this to get an exciting Audi Car</option>
+        <option value="2">Mercedes</option>
+        <option value="3">Ford</option>
+        <option value="4">STH</option>
+    </select>
+
+    <!-- <p>This is a para</p>
     <p>
         <img id="gertrude" src="img/images.jpg" >
         <img id="gertrude1" src="img/images.jpg" alt="This is not an ostrich 1">
@@ -25,7 +34,7 @@
         <img id="gertrude4" src="img/images.jpg" >
         <img id="gertrude5" src="img/images.jpg" alt="This is not an ostrich 3" onclick="myFunc()">
 
-    </p>
+    </p> -->
 
 
     <!-- Include script tag at the end of the file  -->

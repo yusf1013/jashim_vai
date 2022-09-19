@@ -65,13 +65,29 @@ paras[0].style.fontSize = "15px";
 
 console.log(document.querySelectorAll("#second"));
 
+let count = 1;
 function myFunc() {
-    console.log("Hello");
     // document.body.appendChild( document.createTextNode("HI") );
     // document.body.append("hi");
     // document.body.append("<h1>hi</h1>");
     
+    // let newNode = document.createElement("h1");
+    // newNode.innerHTML = `${count}. hi`;
+    // document.body.append(newNode);
+    // count++;
+
     let newNode = document.createElement("h1");
-    newNode.innerHTML = "hi";
+    // newNode.innerHTML = `${count++}. hi`;
+    newNode.innerHTML = `${++count}. hi`;
     document.body.append(newNode);
+}
+
+function changeColor(btn) {
+    // document.getElementById("button").style.backgroundColor = "green";
+    btn.style.backgroundColor = "green";
+    document.body.style.backgroundColor = "blue";
+}
+
+function onChange(item){
+    console.log(item.value);
 }
