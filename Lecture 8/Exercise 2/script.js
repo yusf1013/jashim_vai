@@ -50,8 +50,8 @@ function onButtonClick(userChoice) {
     let h3 = document.getElementsByTagName("h3")[0];
     h3.innerHTML = `Score: You - ${myWins}, Computer - ${computerWins}, Tie - ${tie}`;
 
-    console.log("You chose", arr[userChoice]);
-    console.log("Computer chose", arr[computerChoice]);
+    // console.log("You chose", arr[userChoice]);
+    // console.log("Computer chose", arr[computerChoice]);
     // console.log("Score:", totalScore);
 
 }
