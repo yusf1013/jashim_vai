@@ -3,21 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     
-    <input type="text" name="item" id="item">
-    <button onclick="submit()">Submit</button>
+    <!-- 
+        <input type="checkbox" name="0" id="0"> <label for="0">Option 1</label> <br>
+        <input type="checkbox" name="1" id="1"> <label for="1">Option 2</label> <br>
+        <input type="checkbox" name="2" id="2"> <label for="2">Option 3</label> <br>
+        <input type="checkbox" name="3" id="3"> <label for="3">Option 4</label> <br> 
+        Does not work because - 
+        1. Have to use radio not checkbox
+        2. All input fields must have the same value for the name attribute. This way we can tell which inputs are grouped together.
+        Only one item can be selected from the radio inputs having the same name attribute.
+    -->
 
-    <select name="view" id="view" onchange="changeView(this.value)">
-        <option value=0>All items</option>
-        <option value=1>Only Purchased items</option>
-        <option value=2>Only remaining items</option>
-    </select>
+    <!-- <h1 id="q">Question 1</h1>
+    <input type="radio" name="0" id="0"> <label for="0">Option 1</label> <br>
+    <input type="radio" name="0" id="1"> <label for="1">Option 2</label> <br>
+    <input type="radio" name="0" id="2"> <label for="2">Option 3</label> <br>
+    <input type="radio" name="0" id="3"> <label for="3">Option 4</label> <br>
 
-    <ul id="list">
-    </ul>
+    <button onclick="checkAnswer()" id="submitButton">Submit</button> -->
 
+    <div id="questionSection">
+        <h1 id="q">Question 1</h1>
+        <input type="radio" name="0" id="0"> <label for="0">Option 1</label> <br>
+        <input type="radio" name="0" id="1"> <label for="1">Option 2</label> <br>
+        <input type="radio" name="0" id="2"> <label for="2">Option 3</label> <br>
+        <input type="radio" name="0" id="3"> <label for="3">Option 4</label> <br>
+
+        <button onclick="checkAnswer()">Submit</button>
+    </div>
+
+    <h1 id="score"></h1>
+    
     <script src="script.js"></script>
 </body>
 </html>

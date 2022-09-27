@@ -1,95 +1,111 @@
-// dictionary DEMO
+let questions = [
+    {
+        "question": "Who, in 1903, was the first woman to win a Nobel Prize?",
+        "options": ["Marie Curie", "Pierre Curie", "Röntgen", "Plank"],
+        "answer": "Marie Curie"
+    },
+    {
+        "question": "Question 2?",
+        "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+        "answer": "Option 1"
+    },
+    {
+        "question": "Question 3?",
+        "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+        "answer": "Option 1"
+    },
+    {
+        "question": "Question 4?",
+        "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+        "answer": "Option 1"
+    },
+    {
+        "question": "Question 5?",
+        "options": ["Option 1", "Option 2", "Option 3", "Option 4"],
+        "answer": "Option 1"
+    }
+];
 
-// let dict = {
-//     "name": "George",
-//     "age": 21,
-//     "height": "5ft 5"
-// };
+questions.sort(() => Math.random() - 0.5);
+let currentQuestionIndex = 0;
+let selectedQuestion;
 
-// console.log(dict.age);
-// console.log( dict['age'] );
+let userScore = 0;
 
-// let arr = [0, 1, 2];
-// console.log(arr[1]);
+loadQuestionInPage();
 
-// let arrQA = [
-//     {
-//         "Q": "Who was the first president of USA?",
-//         "A": "George Washington"
-//     },
-//     {
-//         "Q": "This is another question",
-//         "A": "This is another answer"
-//     }
-// ]
+function loadQuestionInPage(){
+    // selectedQuestion = questions[0];
+    selectedQuestion = questions[currentQuestionIndex];
+    document.getElementById("q").innerHTML = selectedQuestion['question'];
+    selectedQuestion.options.sort(() => Math.random() - 0.5);
+    console.log(selectedQuestion.options);
 
-// console.log(arrQA[0].Q)
-// console.log(arrQA[1].Q)
+    let labels = document.getElementsByTagName("label");
 
+    for(let i = 0; i < selectedQuestion.options.length; i++) {
+        labels[i].innerHTML = selectedQuestion.options[i];
+    }
 
-// console.log(arrQA[0].A)
-// console.log(arrQA[1].A)
+    currentQuestionIndex++;
+}
 
-// function checkItem(item){
-//     // console.log("Hello", item.srcElement);
-//     let li = item.srcElement;
-//     li.style.textDecoration = "line-through";
-// }
+function checkAnswer() {
+    let checkedIndex;
+    let radios = document.getElementsByTagName("input");
 
-function checkItem(item){
-    if(item.style.textDecoration === "line-through")
-        item.style.textDecoration = "";
+    for(let i = 0; i < radios.length; i++) {
+        if(radios[i].checked)
+            checkedIndex = i;
+    }
+
+    if(checkedIndex == undefined)
+    {
+        alert("Please select an option");
+        return;
+    }
+
+    if(selectedQuestion.options[checkedIndex] === selectedQuestion.answer)
+        userScore++;
     else
-        item.style.textDecoration = "line-through";
+        console.log("Incorrect!");
+
+    
+    resetOptions();
+    if(currentQuestionIndex < questions.length)
+        loadQuestionInPage();
+    else
+        displayScore();
+
+
+
 }
 
-function submit(){
-    let item = document.getElementById("item").value;
-    console.log(item, "Added");
-
-    if(item){ // if(item.length > 0) // if item is not empty, null, or undefined
-        let ul = document.getElementById("list");
-        let newNode = document.createElement("li");
-        
-        // newNode.onclick = checkItem; //DON'T use this - newNode.onclick = checkItem();
-        // newNode.onclick = 'checkItem(this)';
-        newNode.setAttribute('onclick', 'checkItem(this)');
-        // newNode.style.color = ""
-        newNode.innerHTML = item;
-
-        ul.appendChild(newNode);
-
-        document.getElementById("item").value = "";
-    }
+function resetOptions(){
+    let inputs = document.getElementsByTagName("input");
+    for(input of inputs)
+        input.checked = false;
 }
 
-function changeView(value){
-    console.log(typeof value);
-    let li = document.getElementsByTagName("li");
+function reload() {
+    window.location.reload();
+}
+// let reload = () => 2;
 
-    if(value === "1") {
-        for(let i = 0; i < li.length; i++) {
-            if(li[i].style.textDecoration !== "line-through")
-                li[i].style.display = "none";
-            else
-                li[i].style.display ="";
-        }
-    }
-    else if (value === "2") {
-        for(let i = 0; i < li.length; i++) {
-            if(li[i].style.textDecoration === "line-through")
-                li[i].style.display = "none";
-            else
-                li[i].style.display ="";
-        }
-    }
-    else {
-        for(let i = 0; i < li.length; i++) {
-            li[i].style.display = "";
-        }
-    }
+function displayScore(){
+    document.getElementById("score").innerHTML = `Your score is ${userScore}/${questions.length}`;
+    document.getElementById("questionSection").style.display = "none";
+
+    let newNode = document.createElement("button");
+    newNode.innerHTML = "RESET";
+    newNode.onclick = reload; // right
+    // newNode.onclick = reload(); // wrong
+    // newNode.setAttribute("onclick", "reload()");
+    document.body.append(newNode);
 }
 
-
+// // This is possible
+// let newVar = reload;
+// newVar(); // Same as calling reload();
 
 

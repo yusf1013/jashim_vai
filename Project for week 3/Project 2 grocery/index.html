@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" name="item" id="item">
+    <button onclick="submit()">Submit</button>
+
+    <select name="view" id="view" onchange="changeView(this.value)">
+        <option value=0>All items</option>
+        <option value=1>Only Purchased items</option>
+        <option value=2>Only remaining items</option>
+    </select>
+
+    <ul id="list">
+    </ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
