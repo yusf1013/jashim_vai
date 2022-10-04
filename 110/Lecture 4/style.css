@@ -1,0 +1,39 @@
+.flex-item {
+    width: 200px; 
+    /* min-width: 200px; */ /* using min-width when width is in cross axis stretches the item along the cross axis */
+    margin: 10px;
+    border: 5px;
+    background-color: darkolivegreen;
+}
+
+.flex-item-1 {
+    min-height: 100px;
+}
+
+.flex-item-2 {
+    min-height: 200px;
+}
+
+.flex-item-3 {
+    min-height: 300px;
+}
+
+.flex-container {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+
+/*
+Flex box tries to stretch its children along the cross axis. 
+For a row - 
+But it won't do so if you specify the height. 
+So instead specify the min-height
+
+For a col - 
+But it won't do so if you specify the width. 
+So instead specify the min-width
+*/
+
+
+

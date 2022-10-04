@@ -1,0 +1,25 @@
+body {
+    background-color: rgba(48, 148, 136, 0.704);
+    background-image: url("download.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh; /* vs stands for view height. Height is equal to the entire space we can see*/
+    /* background-repeat: repeat-x; */
+    /* background-image: url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"); */
+}
+
+h1 {
+    border: 2px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
+    border-radius: 150px;
+    background-color: red;
+    text-align: center;
+    line-height: 75px;
+}
+
+span {
+    /* display: block; */
+    background-color: red;
+    height: 50px;
+}
