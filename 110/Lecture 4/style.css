@@ -8,21 +8,38 @@
 
 .flex-item-1 {
     min-height: 100px;
+    align-self: flex-end;
+    /* flex: initial; /* default */
 }
 
 .flex-item-2 {
-    min-height: 200px;
+    /* min-height: 200px; */
+    height: 200px;
+    /* flex: 2; */
 }
 
 .flex-item-3 {
     min-height: 300px;
+    flex: 1;
 }
 
 .flex-container {
     display: flex;
+    justify-content: space-around;
+    /* Default value - align-items: stretch */
+    /* align-items: stretch;  */
+
+    align-items: stretch;
     /* flex-direction: column; */
+    /* height: 1000px; */
+
+    /* flex-wrap: wrap; */
 }
 
+
+img {
+    height: 200px;
+}
 
 /*
 Flex box tries to stretch its children along the cross axis. 
