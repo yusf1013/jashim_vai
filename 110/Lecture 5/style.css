@@ -1,0 +1,61 @@
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even){
+    background-color: gray;
+}
+
+tr:hover {
+    background-color: red;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: brown;
+}
+
+#tooltip p {
+    display: none;
+}
+
+#tooltip:hover p{
+    display: inline;
+    /* color: blue; */
+}
+
+#grad {
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+/* div:active {
+    color: brown;
+} */
+
+/* 
+Place the more general pseudo classes on top. 
+For ex - Not all links that I hover on will be active, 
+but any active link means the mouse is hovering on it. 
+*/
+
+
+
